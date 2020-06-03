@@ -1,3 +1,13 @@
+---
+title: "Dataset Exploration: IBM HR Analytics Employee Attrition & Performance"
+date: 2020-06-03
+tags: [dataset exploration, HR analytics]
+header:
+  image:
+excerpt: "Dataset Exploration, HR Analytics"
+mathjax: "true"
+---
+
 ## Dataset Exploration
 
 ### Loading the Dataset
@@ -13,7 +23,7 @@ from matplotlib.ticker import MaxNLocator
 
 
 ```python
-attrition_df = pd.read_csv("WA_Fn-UseC_-HR-Employee-Attrition.csv") #dataset downloaded from https://www.kaggle.com/pavansubhasht/ibm-hr-analytics-attrition-dataset 
+attrition_df = pd.read_csv("WA_Fn-UseC_-HR-Employee-Attrition.csv") #dataset downloaded from https://www.kaggle.com/pavansubhasht/ibm-hr-analytics-attrition-dataset
 ```
 
 ### Data Overview
@@ -840,7 +850,7 @@ attrition_df.info()
 for c in attrition_df.iteritems():
     attribute = c[0]
     unique_val = attrition_df[attribute].unique()
-    print(attribute) 
+    print(attribute)
     print(unique_val)
 ```
 
@@ -1201,27 +1211,17 @@ for d in departments:
 ```
 
 
-![png](output_16_0.png)
+<img src="{{ site.url }}{{ site.baseurl }}/images/mini_project/output_16_0.png" alt="fig1">
 
+<img src="{{ site.url }}{{ site.baseurl }}/images/mini_project/output_16_1.png" alt="fig2">
 
+<img src="{{ site.url }}{{ site.baseurl }}/images/mini_project/output_16_2.png" alt="fig3">
 
-![png](output_16_1.png)
+<img src="{{ site.url }}{{ site.baseurl }}/images/mini_project/output_16_3.png" alt="fig4">
 
+<img src="{{ site.url }}{{ site.baseurl }}/images/mini_project/output_16_4.png" alt="fig5">
 
-
-![png](output_16_2.png)
-
-
-
-![png](output_16_3.png)
-
-
-
-![png](output_16_4.png)
-
-
-
-![png](output_16_5.png)
+<img src="{{ site.url }}{{ site.baseurl }}/images/mini_project/output_16_5.png" alt="fig6">
 
 
 ### Attribute Removal
@@ -1448,20 +1448,20 @@ cat_variables = ['BusinessTravel','Department','Education','EducationField','Env
 sns.set(rc={'figure.figsize':(15,10)})
 sns.set_style("whitegrid")
 
-for i in cat_variables: 
+for i in cat_variables:
     ax = sns.countplot(x=i, hue="Attrition", data=attrition_df)
     ax.axes.set_title(f"Count of Employees Who Have Left and Stayed by {i}",fontsize=15)
     ax.set_xlabel(i,fontsize=15)
     ax.set_ylabel("Count of Employees",fontsize=15)
     plt.xticks(rotation=40)
-    plt.setp(ax.get_legend().get_texts(), fontsize='15') 
-    plt.setp(ax.get_legend().get_title(), fontsize='15') 
+    plt.setp(ax.get_legend().get_texts(), fontsize='15')
+    plt.setp(ax.get_legend().get_title(), fontsize='15')
     plt.show()
-    
+
     #https://github.com/mwaskom/seaborn/issues/1027:
     props = attrition_df.groupby(i)['Attrition'].value_counts(normalize=True).unstack()
     props.plot(kind='bar')
-   
+
     plt.title(f"Proportion of Employees Who Have Left and Stayed by {i}",fontsize=15)
     plt.xlabel(i,fontsize=15)
     plt.xticks(rotation=40)
@@ -1469,131 +1469,72 @@ for i in cat_variables:
     plt.show()
 ```
 
+<img src="{{ site.url }}{{ site.baseurl }}/images/mini_project/output_20_0.png" alt="fig7">
 
-![png](output_20_0.png)
+<img src="{{ site.url }}{{ site.baseurl }}/images/mini_project/output_20_1.png" alt="fig8">
 
+<img src="{{ site.url }}{{ site.baseurl }}/images/mini_project/output_20_2.png" alt="fig9">
 
+<img src="{{ site.url }}{{ site.baseurl }}/images/mini_project/output_20_3.png" alt="fig10">
 
-![png](output_20_1.png)
+<img src="{{ site.url }}{{ site.baseurl }}/images/mini_project/output_20_4.png" alt="fig11">
 
+<img src="{{ site.url }}{{ site.baseurl }}/images/mini_project/output_20_5.png" alt="fig12">
 
+<img src="{{ site.url }}{{ site.baseurl }}/images/mini_project/output_20_6.png" alt="fig13">
 
-![png](output_20_2.png)
+<img src="{{ site.url }}{{ site.baseurl }}/images/mini_project/output_20_7.png" alt="fig14">
 
+<img src="{{ site.url }}{{ site.baseurl }}/images/mini_project/output_20_8.png" alt="fig15">
 
+<img src="{{ site.url }}{{ site.baseurl }}/images/mini_project/output_20_9.png" alt="fig16">
 
-![png](output_20_3.png)
+<img src="{{ site.url }}{{ site.baseurl }}/images/mini_project/output_20_10.png" alt="fig17">
 
+<img src="{{ site.url }}{{ site.baseurl }}/images/mini_project/output_20_11.png" alt="fig18">
 
+<img src="{{ site.url }}{{ site.baseurl }}/images/mini_project/output_20_12.png" alt="fig19">
 
-![png](output_20_4.png)
+<img src="{{ site.url }}{{ site.baseurl }}/images/mini_project/output_20_13.png" alt="fig20">
 
+<img src="{{ site.url }}{{ site.baseurl }}/images/mini_project/output_20_14.png" alt="fig21">
 
+<img src="{{ site.url }}{{ site.baseurl }}/images/mini_project/output_20_15.png" alt="fig22">
 
-![png](output_20_5.png)
+<img src="{{ site.url }}{{ site.baseurl }}/images/mini_project/output_20_16.png" alt="fig23">
 
+<img src="{{ site.url }}{{ site.baseurl }}/images/mini_project/output_20_17.png" alt="fig24">
 
+<img src="{{ site.url }}{{ site.baseurl }}/images/mini_project/output_20_18.png" alt="fig25">
 
-![png](output_20_6.png)
+<img src="{{ site.url }}{{ site.baseurl }}/images/mini_project/output_20_19.png" alt="fig26">
 
+<img src="{{ site.url }}{{ site.baseurl }}/images/mini_project/output_20_20.png" alt="fig27">
 
+<img src="{{ site.url }}{{ site.baseurl }}/images/mini_project/output_20_21.png" alt="fig28">
 
-![png](output_20_7.png)
+<img src="{{ site.url }}{{ site.baseurl }}/images/mini_project/output_20_22.png" alt="fig29">
 
+<img src="{{ site.url }}{{ site.baseurl }}/images/mini_project/output_20_23.png" alt="fig30">
 
+<img src="{{ site.url }}{{ site.baseurl }}/images/mini_project/output_20_24.png" alt="fig31">
 
-![png](output_20_8.png)
+<img src="{{ site.url }}{{ site.baseurl }}/images/mini_project/output_20_25.png" alt="fig32">
 
+<img src="{{ site.url }}{{ site.baseurl }}/images/mini_project/output_20_26.png" alt="fig33">
 
+<img src="{{ site.url }}{{ site.baseurl }}/images/mini_project/output_20_27.png" alt="fig34">
 
-![png](output_20_9.png)
+<img src="{{ site.url }}{{ site.baseurl }}/images/mini_project/output_20_28.png" alt="fig35">
 
-
-
-![png](output_20_10.png)
-
-
-
-![png](output_20_11.png)
-
-
-
-![png](output_20_12.png)
-
-
-
-![png](output_20_13.png)
-
-
-
-![png](output_20_14.png)
-
-
-
-![png](output_20_15.png)
-
-
-
-![png](output_20_16.png)
-
-
-
-![png](output_20_17.png)
-
-
-
-![png](output_20_18.png)
-
-
-
-![png](output_20_19.png)
-
-
-
-![png](output_20_20.png)
-
-
-
-![png](output_20_21.png)
-
-
-
-![png](output_20_22.png)
-
-
-
-![png](output_20_23.png)
-
-
-
-![png](output_20_24.png)
-
-
-
-![png](output_20_25.png)
-
-
-
-![png](output_20_26.png)
-
-
-
-![png](output_20_27.png)
-
-
-
-![png](output_20_28.png)
-
-
-
-![png](output_20_29.png)
+<img src="{{ site.url }}{{ site.baseurl }}/images/mini_project/output_20_29.png" alt="fig36">
 
 
 ### Visualisation of Numerical Variables
 
 
 ```python
-num_variables = ['Age', 'DistanceFromHome','MonthlyIncome','NumCompaniesWorked','PercentSalaryHike', 'TotalWorkingYears', 'TrainingTimesLastYear', 'YearsAtCompany', 'YearsInCurrentRole', 'YearsSinceLastPromotion', 'YearsWithCurrManager'] 
+num_variables = ['Age', 'DistanceFromHome','MonthlyIncome','NumCompaniesWorked','PercentSalaryHike', 'TotalWorkingYears', 'TrainingTimesLastYear', 'YearsAtCompany', 'YearsInCurrentRole', 'YearsSinceLastPromotion', 'YearsWithCurrManager']
 
 sns.set(rc={'figure.figsize':(15,10)})
 sns.set_style("whitegrid")
@@ -1604,7 +1545,7 @@ for i in num_variables:
     ax.set_xlabel('Attrition',fontsize=15)
     ax.set_ylabel(i,fontsize=15)
     plt.show()
-    
+
     mean_yes = attrition_df[attrition_df['Attrition']=='Yes'].mean()
     mean_no = attrition_df[attrition_df['Attrition']=='No'].mean()
     med_yes = attrition_df[attrition_df['Attrition']=='Yes'].median()
@@ -1617,7 +1558,7 @@ for i in num_variables:
     q1_no = attrition_df[attrition_df['Attrition']=='No'].quantile(0.25)
     q3_yes = attrition_df[attrition_df['Attrition']=='Yes'].quantile(0.75)
     q3_no = attrition_df[attrition_df['Attrition']=='No'].quantile(0.75)
-    
+
     print(f'employees who left (attrition=yes):')
     print(f'mean {i}: {mean_yes[i]:.2f}')
     print(f'median {i}: {med_yes[i]:.2f}')
@@ -1633,8 +1574,8 @@ for i in num_variables:
     print(f'max {i}: {max_no[i]:.2f}')
 ```
 
+<img src="{{ site.url }}{{ site.baseurl }}/images/mini_project/output_22_0.png" alt="fig37">
 
-![png](output_22_0.png)
 
 
     employees who left (attrition=yes):
@@ -1643,8 +1584,8 @@ for i in num_variables:
     IQR Age: 11.00
     min Age: 18.00
     max Age: 58.00
-    
-    
+
+
     employees who stayed (attrition=no):
     mean Age: 37.56
     median Age: 36.00
@@ -1653,8 +1594,7 @@ for i in num_variables:
     max Age: 60.00
 
 
-
-![png](output_22_2.png)
+<img src="{{ site.url }}{{ site.baseurl }}/images/mini_project/output_22_2.png" alt="fig38">
 
 
     employees who left (attrition=yes):
@@ -1663,8 +1603,8 @@ for i in num_variables:
     IQR DistanceFromHome: 14.00
     min DistanceFromHome: 1.00
     max DistanceFromHome: 29.00
-    
-    
+
+
     employees who stayed (attrition=no):
     mean DistanceFromHome: 8.92
     median DistanceFromHome: 7.00
@@ -1673,8 +1613,8 @@ for i in num_variables:
     max DistanceFromHome: 29.00
 
 
+<img src="{{ site.url }}{{ site.baseurl }}/images/mini_project/output_22_4.png" alt="fig39">
 
-![png](output_22_4.png)
 
 
     employees who left (attrition=yes):
@@ -1683,8 +1623,8 @@ for i in num_variables:
     IQR MonthlyIncome: 3543.00
     min MonthlyIncome: 1009.00
     max MonthlyIncome: 19859.00
-    
-    
+
+
     employees who stayed (attrition=no):
     mean MonthlyIncome: 6832.74
     median MonthlyIncome: 5204.00
@@ -1692,9 +1632,7 @@ for i in num_variables:
     min MonthlyIncome: 1051.00
     max MonthlyIncome: 19999.00
 
-
-
-![png](output_22_6.png)
+<img src="{{ site.url }}{{ site.baseurl }}/images/mini_project/output_22_6.png" alt="fig40">
 
 
     employees who left (attrition=yes):
@@ -1703,8 +1641,8 @@ for i in num_variables:
     IQR NumCompaniesWorked: 4.00
     min NumCompaniesWorked: 0.00
     max NumCompaniesWorked: 9.00
-    
-    
+
+
     employees who stayed (attrition=no):
     mean NumCompaniesWorked: 2.65
     median NumCompaniesWorked: 2.00
@@ -1713,8 +1651,8 @@ for i in num_variables:
     max NumCompaniesWorked: 9.00
 
 
+<img src="{{ site.url }}{{ site.baseurl }}/images/mini_project/output_22_8.png" alt="fig41">
 
-![png](output_22_8.png)
 
 
     employees who left (attrition=yes):
@@ -1723,8 +1661,8 @@ for i in num_variables:
     IQR PercentSalaryHike: 5.00
     min PercentSalaryHike: 11.00
     max PercentSalaryHike: 25.00
-    
-    
+
+
     employees who stayed (attrition=no):
     mean PercentSalaryHike: 15.23
     median PercentSalaryHike: 14.00
@@ -1733,8 +1671,8 @@ for i in num_variables:
     max PercentSalaryHike: 25.00
 
 
+<img src="{{ site.url }}{{ site.baseurl }}/images/mini_project/output_22_10.png" alt="fig42">
 
-![png](output_22_10.png)
 
 
     employees who left (attrition=yes):
@@ -1743,8 +1681,8 @@ for i in num_variables:
     IQR TotalWorkingYears: 7.00
     min TotalWorkingYears: 0.00
     max TotalWorkingYears: 40.00
-    
-    
+
+
     employees who stayed (attrition=no):
     mean TotalWorkingYears: 11.86
     median TotalWorkingYears: 10.00
@@ -1753,8 +1691,8 @@ for i in num_variables:
     max TotalWorkingYears: 38.00
 
 
+<img src="{{ site.url }}{{ site.baseurl }}/images/mini_project/output_22_12.png" alt="fig43">
 
-![png](output_22_12.png)
 
 
     employees who left (attrition=yes):
@@ -1763,8 +1701,8 @@ for i in num_variables:
     IQR TrainingTimesLastYear: 1.00
     min TrainingTimesLastYear: 0.00
     max TrainingTimesLastYear: 6.00
-    
-    
+
+
     employees who stayed (attrition=no):
     mean TrainingTimesLastYear: 2.83
     median TrainingTimesLastYear: 3.00
@@ -1773,8 +1711,8 @@ for i in num_variables:
     max TrainingTimesLastYear: 6.00
 
 
+<img src="{{ site.url }}{{ site.baseurl }}/images/mini_project/output_22_14.png" alt="fig44">
 
-![png](output_22_14.png)
 
 
     employees who left (attrition=yes):
@@ -1783,8 +1721,8 @@ for i in num_variables:
     IQR YearsAtCompany: 6.00
     min YearsAtCompany: 0.00
     max YearsAtCompany: 40.00
-    
-    
+
+
     employees who stayed (attrition=no):
     mean YearsAtCompany: 7.37
     median YearsAtCompany: 6.00
@@ -1793,8 +1731,8 @@ for i in num_variables:
     max YearsAtCompany: 37.00
 
 
+<img src="{{ site.url }}{{ site.baseurl }}/images/mini_project/output_22_16.png" alt="fig45">
 
-![png](output_22_16.png)
 
 
     employees who left (attrition=yes):
@@ -1803,8 +1741,8 @@ for i in num_variables:
     IQR YearsInCurrentRole: 4.00
     min YearsInCurrentRole: 0.00
     max YearsInCurrentRole: 15.00
-    
-    
+
+
     employees who stayed (attrition=no):
     mean YearsInCurrentRole: 4.48
     median YearsInCurrentRole: 3.00
@@ -1813,8 +1751,8 @@ for i in num_variables:
     max YearsInCurrentRole: 18.00
 
 
+<img src="{{ site.url }}{{ site.baseurl }}/images/mini_project/output_22_18.png" alt="fig46">
 
-![png](output_22_18.png)
 
 
     employees who left (attrition=yes):
@@ -1823,8 +1761,8 @@ for i in num_variables:
     IQR YearsSinceLastPromotion: 2.00
     min YearsSinceLastPromotion: 0.00
     max YearsSinceLastPromotion: 15.00
-    
-    
+
+
     employees who stayed (attrition=no):
     mean YearsSinceLastPromotion: 2.23
     median YearsSinceLastPromotion: 1.00
@@ -1833,8 +1771,8 @@ for i in num_variables:
     max YearsSinceLastPromotion: 15.00
 
 
+<img src="{{ site.url }}{{ site.baseurl }}/images/mini_project/output_22_20.png" alt="fig47">
 
-![png](output_22_20.png)
 
 
     employees who left (attrition=yes):
@@ -1843,8 +1781,8 @@ for i in num_variables:
     IQR YearsWithCurrManager: 5.00
     min YearsWithCurrManager: 0.00
     max YearsWithCurrManager: 14.00
-    
-    
+
+
     employees who stayed (attrition=no):
     mean YearsWithCurrManager: 4.37
     median YearsWithCurrManager: 3.00
@@ -2071,7 +2009,7 @@ attrition_df.head() #Attrition replaced with 1s and 0s
 
 
 ```python
-attrition_df.info() #checking to see which variables we need to convert, we need to convert all the variables with the datatype object 
+attrition_df.info() #checking to see which variables we need to convert, we need to convert all the variables with the datatype object
 ```
 
     <class 'pandas.core.frame.DataFrame'>
@@ -2115,7 +2053,7 @@ object_vars = attrition_df.select_dtypes(include=['object'])
 for c in object_vars.iteritems():
     attribute = c[0]
     unique_val = attrition_df[attribute].unique()
-    print(attribute) 
+    print(attribute)
     print(unique_val)
 ```
 
@@ -2140,10 +2078,10 @@ for c in object_vars.iteritems():
 
 
 ```python
-# i'm going to explicitly set the numerical values for each of these categorical variables, so I know know each value represents 
+# i'm going to explicitly set the numerical values for each of these categorical variables, so I know know each value represents
 new_cat_values = {'BusinessTravel': {'Travel_Rarely': 0, 'Travel_Frequently': 1,'Non-Travel':2 },
                   'Department': {'Sales': 0, 'Research & Development': 1, 'Human Resources': 2},
-                  'EducationField': {'Life Sciences': 0, 'Other': 1, 'Medical': 2, 'Marketing': 3, 'Technical Degree': 4, 'Human Resources': 5}, 
+                  'EducationField': {'Life Sciences': 0, 'Other': 1, 'Medical': 2, 'Marketing': 3, 'Technical Degree': 4, 'Human Resources': 5},
                   'Gender' : {'Female':0 ,'Male':1},
                   'JobRole' : {'Sales Executive': 0, 'Research Scientist' :1, 'Laboratory Technician' :2, 'Manufacturing Director':3, 'Healthcare Representative' : 4,
                                'Manager': 5, 'Sales Representative' : 6, 'Research Director' : 7, 'Human Resources': 8},
@@ -2367,7 +2305,7 @@ attrition_df_new.head()
 
 
 ```python
-attrition_df_new.info() #all values are now numerical 
+attrition_df_new.info() #all values are now numerical
 ```
 
     <class 'pandas.core.frame.DataFrame'>
@@ -2445,8 +2383,8 @@ print(correlation_all_sorted.head(10))
     PerformanceRating           2.89e-03
     BusinessTravel              7.38e-05
     Name: Attrition, dtype: float64
-    
-    
+
+
     top 10 correlated variables by absolute value of the correlation coefficient
     OverTime                0.25
     TotalWorkingYears       0.17
@@ -2466,7 +2404,7 @@ print(correlation_all_sorted.head(10))
 # code for heatmap retrieved from: https://towardsdatascience.com/better-heatmaps-and-correlation-matrix-plots-in-python-41445d0f2bec
 corr = attrition_df_new.corr()
 ax = sns.heatmap(
-    corr, 
+    corr,
     vmin=-1, vmax=1, center=0,
     cmap=sns.diverging_palette(20, 220, n=200),
     square=True
@@ -2478,6 +2416,4 @@ ax.set_xticklabels(
 );
 ```
 
-
-![png](output_32_0.png)
-
+<img src="{{ site.url }}{{ site.baseurl }}/images/mini_project/output_32_0.png" alt="fig48">
