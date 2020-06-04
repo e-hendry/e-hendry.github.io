@@ -2,9 +2,8 @@
 title: "About"
 permalink: /about/
 header:
-  image: "/images/zakim.jpg"
+  image: "/images/SF2.jpg"
 ---
 
-I'm a senior data scientist who excels at data wrangling, machine learning, exploratory analysis, and data visualizations.
-
-Etc, etc, etc
+I am a MS Data Analytics student at San José State University with a strong interest in data analytics.
+I created this site to document my learning throughout my degree.
