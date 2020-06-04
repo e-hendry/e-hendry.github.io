@@ -2,7 +2,7 @@
 title: "About"
 permalink: /about/
 header:
-  image: "/images/SF2.jpg"
+  image: "/images/garib.jpg"
 ---
 
 I am a MS Data Analytics student at San José State University with a strong interest in data analytics.
